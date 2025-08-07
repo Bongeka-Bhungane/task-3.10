@@ -1,8 +1,12 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+* {
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #f5f5f5;
 }
 
 .container {
@@ -14,21 +18,39 @@ body {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-header h1 {
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: center;
+.top-bar {
+    background-color: black;
+    padding: 1em 0;
+    height: 10%;
+}
+ .logo {
+    justify-content: left;
+    color: white;
+    font-weight: bold;
+ }
+.nav-links {
+    display: flex;
+    justify-content: right;
+    list-style: none;
+    gap: 2em;
+    color: white;
 }
 
-header p {
-  display: flex;
-  justify-content: center; 
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+h1, p {
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 nav {
   display: flex;
-  margin: 20px 0;
-
+  justify-content: space-between;
 }
 
 .tab {
@@ -53,7 +75,6 @@ nav {
   display: block;
 }
 
-
 form {
   display: flex;
   flex-direction: column;
@@ -62,14 +83,16 @@ form {
 
 form label {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
   font-weight: bold;
 }
 
 input, select, button {
-  padding: 8px;
-  margin-top: 5px;
   font-size: 1rem;
+  padding: 5px;
+  min-width: 100px;
 }
 
 button[type="button"] {
@@ -78,4 +101,16 @@ button[type="button"] {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  width: fit-content;
 }
+
+.result p {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+
+
+
+

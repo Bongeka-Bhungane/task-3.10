@@ -9,106 +9,125 @@
 <body>
   <main class="container">
     <header>
+      <nav class="top-bar">
+    <div class="logo">Portfolio</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#Services">Services</a></li>
+        <li><a href="contactus.html">Contacts</a></li>
+        <li><a href="converter.html">Project</a></li>
+    </ul>
+   </nav>
+   
       <h1>Converter Hub</h1>
       <p>A collection of useful conversion tools.</p>
     </header>
-
     <nav>
       <button class="tab active" data-tab="file-transfer">File Transfer</button>
       <button class="tab" data-tab="temperature">Temperature</button>
       <button class="tab" data-tab="scientific">Scientific</button>
       <button class="tab" data-tab="metric">Metric</button>
     </nav>
-
+    <!-- File Transfer Tab -->
     <section id="file-transfer" class="tab-content active">
-      <h2>File Transfer Time Calculator</h2>
-      <form>
+      <h2 style="margin-bottom: 10px;">File Transfer Time Calculator</h2>
+      <form id="fileForm">
         <label>
           File Size:
-          <input type="number" value="1"/>
-          <select>
-            <option>Gigabytes (GB)</option>
-            <option>Megabytes (MB)</option>
-            <option>Kilobytes (KB)</option>
+          <div style="display: flex;">
+          <input type="number" id="fileSize" value="1" />
+          <select id="fileUnit">
+            <option value="KB">Kilobytes (KB)</option>
+            <option value="MB">Megabytes (MB)</option>
+            <option value="GB">Gigabytes (GB)</option>
           </select>
+          </div>
         </label>
-
         <label>
           Internet Speed:
-          <input type="number" value="20" />
-          <select>
-            <option>Megabits/sec (Mbps)</option>
-            <option>Gigabits/sec (Gbps)</option>
-            <option>Kilobits/sec (Kbps)</option>
+          <div style="display: flex;">
+          <input type="number" id="speed" value="20" />
+          <select id="speedUnit">
+            <option value="Kbps">Kilobits/sec (Kbps)</option>
+            <option value="Mbps">Megabits/sec (Mbps)</option>
+            <option value="Gbps">Gigabits/sec (Gbps)</option>
           </select>
+          </div>
         </label>
-
-        <button type="button">Calculate</button>
+        <button type="button" onclick="calculateTransferTime()" style="width: 100%;">Calculate</button>
+        <div class="result">
+          <p>Estimated Time: <span id="transfer-time">0 seconds</span></p>
+        </div>
       </form>
     </section>
-
-    <section id="temperature" class="tab-content active2">
+    <!-- The Temperature Tab -->
+    <section id="temperature" class="tab-content">
       <h2>Temperature Converter</h2>
-      <form>
+      <form id="tempForm">
         <label>
-         <p>Value to Convert:</p>
-          <input type="number" value="1"/>
-
-          <p>From:</p>
-          <select>
-            <option>Celsius (°C)</option>
-            <option>Fahrenhiet (°F)</option>
+          Temperature:
+          <input type="number" id="tempInput" value="0" />
+          <select id="tempFrom">
+            <option value="C">Celsius</option>
+            <option value="F">Fahrenheit</option>
+            <option value="K">Kelvin</option>
+          </select>
+          to
+          <select id="tempTo">
+            <option value="C">Celsius</option>
+            <option value="F">Fahrenheit</option>
+            <option value="K">Kelvin</option>
           </select>
         </label>
-
-        <button type="button">Convert</button>
+        <button type="button" onclick="convertTemperature()" style="width: 100%;">Convert</button>
+        <div class="result">
+          <p>Result: <span id="temp-result">0</span></p>
+        </div>
       </form>
-
+    </section>
+    <!-- Scientific Tab -->
     <section id="scientific" class="tab-content">
-      <h2>Scientific Convert</h2>
-      <p>Standard Number</p>
+      <h2>Scientific Notation Converter</h2>
       <form>
         <label>
-         <p>Value to Convert:</p>
-          <input type="number" value="1"/>
+          Number:
+          <input type="number" id="sciInput" />
         </label>
-
-        <button type="button">Convert</button>
+        <button type="button" onclick="convertScientific()" style="width: 100%;">Convert</button>
+        <div class="result">
+          <p>Scientific Notation: <span id="sci-result">0</span></p>
+        </div>
       </form>
     </section>
-
+    <!-- Metric Tab -->
     <section id="metric" class="tab-content">
-      <h2>Metric Prefix Converter</h2>
-      <p>Value:</p>
+      <h2>Metric Unit Converter</h2>
       <form>
         <label>
-          File Size:
-          <input type="number" value="1"/>
-          <select>
-            <option>Giga (G)</option>
-            <option>Mega (M)</option>
-            <option>Kilo (K)</option>
-            <option>Base Unit</option>
-            <option>Mili (M)</option>
-            <option>Micro (µ)</option>
+          Value:
+          <input type="number" id="metricInput" />
+          <select id="metricFrom">
+            <option value="m">Meters</option>
+            <option value="km">Kilometers</option>
+            <option value="g">Grams</option>
+            <option value="kg">Kilograms</option>
           </select>
-
-          <select>
-            <option>Giga (G)</option>
-            <option>Mega (M)</option>
-            <option>Kilo (K)</option>
-            <option>Base Unit</option>
-            <option>Mili (M)</option>
-            <option>Micro (µ)</option>
+          to
+          <select id="metricTo">
+            <option value="m">Meters</option>
+            <option value="km">Kilometers</option>
+            <option value="g">Grams</option>
+            <option value="kg">Kilograms</option>
           </select>
         </label>
-
-        <button type="button">Convert</button>
+        <button type="button" onclick="convertMetric()" style="width: 100%;">Convert</button>
+        <div class="result">
+          <p>Converted Value: <span id="metric-result">0</span></p>
+        </div>
       </form>
-    </section>
     </section>
   </main>
-
   <script src="convertor.js"></script>
 </body>
 </html>
