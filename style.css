@@ -12,12 +12,13 @@ html {
 body {
     font-family: Arial, sans-serif;
     width: 100%;
-    height: 100%;
+    height: 100vh;
 }
 
 .top-bar {
     background-color: black;
     padding: 1em 0;
+    height: 10%;
 }
  .logo {
     justify-content: left;
@@ -42,6 +43,11 @@ body {
 .nav-links a:hover {
     color: #00bcd4;
 }
+
+main {
+    height: 100vh;
+}
+
 
 .hero {
     display: flex;
@@ -112,6 +118,7 @@ body {
     background-color: black;
     color: white;
     gap: 1em;
+    height: 10%;
 }
 
 .footer-text {

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Converter Hub</title>
+  <link rel="stylesheet" href="convertor.css">
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Converter Hub</h1>
+      <p>A collection of useful conversion tools.</p>
+    </header>
+
+    <nav>
+      <button class="tab active" data-tab="file-transfer">File Transfer</button>
+      <button class="tab" data-tab="temperature">Temperature</button>
+      <button class="tab" data-tab="scientific">Scientific</button>
+      <button class="tab" data-tab="metric">Metric</button>
+    </nav>
+
+    <section id="file-transfer" class="tab-content active">
+      <h2>File Transfer Time Calculator</h2>
+      <form>
+        <label>
+          File Size:
+          <input type="number" value="1"/>
+          <select>
+            <option>Gigabytes (GB)</option>
+            <option>Megabytes (MB)</option>
+            <option>Kilobytes (KB)</option>
+          </select>
+        </label>
+
+        <label>
+          Internet Speed:
+          <input type="number" value="20" />
+          <select>
+            <option>Megabits/sec (Mbps)</option>
+            <option>Gigabits/sec (Gbps)</option>
+            <option>Kilobits/sec (Kbps)</option>
+          </select>
+        </label>
+
+        <button type="button">Calculate</button>
+      </form>
+    </section>
+
+    <section id="temperature" class="tab-content active2">
+      <h2>Temperature Converter</h2>
+      <form>
+        <label>
+         <p>Value to Convert:</p>
+          <input type="number" value="1"/>
+
+          <p>From:</p>
+          <select>
+            <option>Celsius (°C)</option>
+            <option>Fahrenhiet (°F)</option>
+          </select>
+        </label>
+
+        <button type="button">Convert</button>
+      </form>
+
+    <section id="scientific" class="tab-content">
+      <h2>Scientific Convert</h2>
+      <p>Standard Number</p>
+      <form>
+        <label>
+         <p>Value to Convert:</p>
+          <input type="number" value="1"/>
+        </label>
+
+        <button type="button">Convert</button>
+      </form>
+    </section>
+
+    <section id="metric" class="tab-content">
+      <h2>Metric Prefix Converter</h2>
+      <p>Value:</p>
+      <form>
+        <label>
+          File Size:
+          <input type="number" value="1"/>
+          <select>
+            <option>Giga (G)</option>
+            <option>Mega (M)</option>
+            <option>Kilo (K)</option>
+            <option>Base Unit</option>
+            <option>Mili (M)</option>
+            <option>Micro (µ)</option>
+          </select>
+
+          <select>
+            <option>Giga (G)</option>
+            <option>Mega (M)</option>
+            <option>Kilo (K)</option>
+            <option>Base Unit</option>
+            <option>Mili (M)</option>
+            <option>Micro (µ)</option>
+          </select>
+        </label>
+
+        <button type="button">Convert</button>
+      </form>
+    </section>
+    </section>
+  </main>
+
+  <script src="convertor.js"></script>
+</body>
+</html>
